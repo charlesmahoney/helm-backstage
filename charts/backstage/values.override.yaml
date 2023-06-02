@@ -1,0 +1,18 @@
+# -- Upstream Backstage [chart configuration](https://github.com/backstage/charts/blob/main/charts/backstage/values.yaml)
+# @default -- Use Openshift compatible settings
+upstream:
+  nameOverride: backstage
+  backstage:
+    image:
+      registry: quay.io
+      repository: janus-idp/backstage-showcase
+      tag: latest
+    command: []
+    appConfig:
+      app:
+        # Please update to match host.
+        baseUrl: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.prft-cps.zuvk.p1.openshiftapps.com'
+      backend:
+        baseUrl: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.prft-cps.zuvk.p1.openshiftapps.com'
+        cors:
+          origin: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.prft-cps.zuvk.p1.openshiftapps.com'
