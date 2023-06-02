@@ -18,11 +18,11 @@ upstream:
     appConfig:
       app:
         # Please update to match host.
-        baseUrl: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.example.com'
+        baseUrl: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.prft-cps.zuvk.p1.openshiftapps.com'
       backend:
-        baseUrl: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.example.com'
+        baseUrl: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.prft-cps.zuvk.p1.openshiftapps.com'
         cors:
-          origin: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.example.com'
+          origin: 'https://{{- print .Release.Name "-" .Release.Namespace -}}.apps.prft-cps.zuvk.p1.openshiftapps.com'
         database:
           connection:
             password: ${POSTGRESQL_ADMIN_PASSWORD}
